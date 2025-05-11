@@ -35,9 +35,9 @@ class BinaryTree:
         
         if current:
             if level > 0:
-                print("    " * (level - 1) + "└----")
-
-            print(current.value)
+                print("    " * (level - 1) + f"└── {current.value}")
+            else:
+                print(current.value)
 
             self.__show_recursive(current.left, level + 1)
             self.__show_recursive(current.right, level + 1)
