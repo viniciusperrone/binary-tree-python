@@ -28,6 +28,18 @@ class BinaryTree:
 
         return current
     
+    def search(self, node: int) -> bool:
+        return self.__search_recursive(self.root, node)
+
+    def __search_recursive(self, current: Node, node: int) -> bool:
+        if current is None:
+            return False
+        
+        if current.value == node:
+            return True
+        
+        return self.__search_recursive(current.left, node) if node < current.value else self.__search_recursive(current.right, node) 
+
     def show(self):
         self.__show_recursive(self.root, 0)
 
