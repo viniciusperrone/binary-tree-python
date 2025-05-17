@@ -18,6 +18,9 @@ if __name__ == '__main__':
     binary_tree.insert(node=35)
     binary_tree.insert(node=23)
 
+    binary_tree.insert(node=5)
+    binary_tree.insert(node=9)
+
     binary_tree.show()
 
     # Should returns False
@@ -25,3 +28,8 @@ if __name__ == '__main__':
 
     # Should returns True
     print(binary_tree.search(node=8))
+
+    # Remove node 30
+    binary_tree.remove(node=30)
+
+    binary_tree.show()

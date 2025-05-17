@@ -82,3 +82,4 @@ class BinaryTree:
 
             self.__show_recursive(current.left, level + 1)
             self.__show_recursive(current.right, level + 1)
+   
