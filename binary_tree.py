@@ -27,6 +27,35 @@ class BinaryTree:
             current.right = self.__insert_recursive(current.right, node)
 
         return current
+
+    def remove(self, node: int):
+        
+        self.root = self.__remove_recursive(self.root, node)
+
+    def __remove_recursive(self, current: Node, node: int):
+        
+        if current is None:
+            return None
+        
+        if node == current.value:
+
+            if current.left is None and current.right is None:
+                return None
+            
+            if current.left is None:
+                return current.right
+            
+            if current.right is None:
+                return current.left
+            
+        if node < current.value:
+            current.left = self.__remove_recursive(current.left, node)
+
+            return current
+
+        current.right = self.__remove_recursive(current.right, node)
+
+        return current
     
     def search(self, node: int) -> bool:
         return self.__search_recursive(self.root, node)
